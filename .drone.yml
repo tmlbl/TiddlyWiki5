@@ -1,0 +1,13 @@
+kind: pipeline
+name: tiddly
+
+steps:
+- name: docker-build
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: harbor_username
+    password:
+      from_secret: harbor_password
+    repo: harbor.tl3.pw/apps/tiddlywiki
+    registry: harbor.tl3.pw
